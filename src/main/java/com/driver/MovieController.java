@@ -11,6 +11,32 @@ public class MovieController {
 
     @Autowired
     public MovieService movieService;
+
+
+
+
+
+
+
+    //Mock interview code
+    @GetMapping("movies/get-director-name-by-movie-name")
+    public ResponseEntity<String> getDirectorNameByMovieName(String movie){
+        String director = movieService.getDirectorNameByMovieName(movie);
+        return new ResponseEntity<>(director,HttpStatus.BAD_REQUEST);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     //1
     @PostMapping("/movies/add-movie")
     public ResponseEntity<String> addMovie(@RequestBody() Movie movie)
@@ -77,5 +103,6 @@ public class MovieController {
             return new ResponseEntity<>(movies, HttpStatus.OK);
         }
     }
+
 
 }

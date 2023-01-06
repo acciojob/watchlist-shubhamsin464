@@ -14,6 +14,32 @@ public class MovieRepository {
     HashMap<String,List<String>>pair=new HashMap<>();
 
 
+
+
+
+
+   // Mock interview API
+    public String getDirectorNameByMovieName(String movie){
+        if(!movies.containsKey(movie))return "NOT FOUND Movie in the database";
+        for(String director : pair.keySet()){
+            List<String> ls = pair.get(director);
+            for(String mov: ls){
+                if(mov.equals(movie))return director;
+            }
+        }
+        return "";
+    }
+
+
+
+
+
+
+
+
+
+
+
     public void addMovie(Movie movie) {
         String name=movie.getName();
         movies.put(name,movie);
@@ -70,4 +96,5 @@ public class MovieRepository {
         return null;
 
     }
+
 }

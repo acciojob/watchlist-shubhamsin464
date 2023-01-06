@@ -11,6 +11,23 @@ public class MovieService {
     @Autowired
     public MovieRepository movieRepository;
 
+
+
+
+    // MOck Interview API build
+    public String getDirectorNameByMovieName(String movie){return movieRepository.getDirectorNameByMovieName(movie);}
+
+
+
+
+
+
+
+
+
+
+
+
     public void addMovie(Movie movie) {
         movieRepository.addMovie(movie);
     }
@@ -40,4 +57,5 @@ public class MovieService {
     public List<String> findAllMovies() {
         return movieRepository.findAllMovies();
     }
+
 }
